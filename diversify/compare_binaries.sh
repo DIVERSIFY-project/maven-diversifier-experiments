@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function test {
+function test() {
     "$@"
     local status=$?
     if [ $status -ne 0 ]; then
@@ -10,7 +10,7 @@ function test {
     return $status
 }
 
-function compare {
+function compare() {
     result=$( test java -jar diversify/Diffcompule-1.0-SNAPSHOT-jar-with-dependencies.jar $1 $2 )
     printf "$result\n"
 }
